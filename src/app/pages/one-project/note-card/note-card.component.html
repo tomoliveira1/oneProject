@@ -1,0 +1,10 @@
+<div  *ngFor="let task of tasks, let i = index" class="card d-flex notes mt-2">
+  <div class="card-body">
+    <h5 class="card-title">{{task.nome}}</h5>
+    <p class="card-text text-secondary">{{task.descricao}}</p>
+  </div>
+<!--
+  <div class="x-button">
+    <i class="fas fa-pen"></i>
+  </div> -->
+</div>

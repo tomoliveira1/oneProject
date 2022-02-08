@@ -1,0 +1,82 @@
+
+<div class="content">
+  <div class="container-fluid" style="background-color: black">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card" id="login-sc">
+          <div class="card-body">
+            <div class="text-center">
+              <img
+                src="../../../assets/one-project-logo.png"
+                width="200px"
+                alt="logo"
+              />
+            </div>
+            <hr class="my-4" />
+            <div class="text-center mb-2">
+              <p>Faça o Login ou cadastre-se.</p>
+            </div>
+            <form
+              [formGroup]="loginForm"
+              #f="ngForm"
+              (ngSubmit)="login()"
+              id="loginForm"
+            >
+              <div class="mb-3">
+                <label for="user" class="form-label">Usuário*</label>
+                <input
+                  required
+                  formControlName="nome"
+                  type="text"
+                  class="form-control"
+                  id="user"
+                />
+
+                <div
+                  *ngIf="f.submitted && loginForm.controls['nome']?.invalid"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="loginForm.controls['nome'].errors">
+                    Campo obrigatório
+                  </div>
+                </div>
+              </div>
+              <div class="mb-1">
+                <label for="password" class="form-label">Senha*</label>
+                <input
+                  required
+                  formControlName="senha"
+                  type="password"
+                  class="form-control"
+                  id="password"
+                />
+              </div>
+              <div class="d-grid gap-2 mt-4">
+                <button
+                  type="submit"
+                  form="loginForm"
+                  class="btn btn-danger btn-block rounded-pill"
+                >
+                  Entrar
+                </button>
+              </div>
+              <div class="text-center p-2">
+                <p class="mb-0 text-muted">ou</p>
+              </div>
+              <div class="d-grid gap-2">
+                <button
+                  type="button"
+                  form="loginForm"
+                  class="btn btn-secondary btn-block rounded-pill"
+                  (click)="signIn()"
+                >
+                  Registrar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
