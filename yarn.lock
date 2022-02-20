@@ -135,14 +135,7 @@
   dependencies:
     "tslib" "^1.7.1"
 
-"@angular/cdk@^5.2.3", "@angular/cdk@5.2.5":
-  "integrity" "sha512-GN8m1d+VcCE9+Bgwv06Y8YJKyZ0i9ZIq2ZPBcJYt+KVgnVVRg4JkyUNxud07LNsvzOX22DquHqmIZiC4hAG7Ag=="
-  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-5.2.5.tgz"
-  "version" "5.2.5"
-  dependencies:
-    "tslib" "^1.7.1"
-
-"@angular/cdk@13.2.0":
+"@angular/cdk@^13.2.0", "@angular/cdk@13.2.0":
   "integrity" "sha512-1fQyfr/KmcF8y/Xz789DN37XgjQPE4kAYjoh6GRd62yKDm/Ic9hKuoKfAthA1bQeskjTO1pb4sMOgum8B4iHeA=="
   "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-13.2.0.tgz"
   "version" "13.2.0"
@@ -150,6 +143,13 @@
     "tslib" "^2.3.0"
   optionalDependencies:
     "parse5" "^5.0.0"
+
+"@angular/cdk@^5.2.3", "@angular/cdk@5.2.5":
+  "integrity" "sha512-GN8m1d+VcCE9+Bgwv06Y8YJKyZ0i9ZIq2ZPBcJYt+KVgnVVRg4JkyUNxud07LNsvzOX22DquHqmIZiC4hAG7Ag=="
+  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-5.2.5.tgz"
+  "version" "5.2.5"
+  dependencies:
+    "tslib" "^1.7.1"
 
 "@angular/cli@~13.1.4":
   "integrity" "sha512-PP9xpvDDCHhLTIZjewQQzzf+JbpF2s5mXTW2AgIL/E53ukaVvXwwjFMt9dQvECwut/LDpThoc3OfqcGrmwtqnA=="
@@ -1571,6 +1571,11 @@
   "resolved" "https://registry.npmjs.org/@types/retry/-/retry-0.12.1.tgz"
   "version" "0.12.1"
 
+"@types/tinycolor2@^1.4.3":
+  "integrity" "sha512-Kf1w9NE5HEgGxCRyIcRXR/ZYtDv0V8FVPtYHwLxl0O+maGX0erE77pQlD0gpP+/KByMZ87mOA79SjifhSB3PjQ=="
+  "resolved" "https://registry.npmjs.org/@types/tinycolor2/-/tinycolor2-1.4.3.tgz"
+  "version" "1.4.3"
+
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
   "resolved" "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.1.tgz"
@@ -1844,6 +1849,13 @@
     "rxjs" "^5.5.6"
     "tslib" "^1.7.1"
     "zone.js" "^0.8.19"
+
+"angular2-text-mask@^9.0.0":
+  "integrity" "sha512-iALcnhJPS1zvX48d86rgUgDe/crX6XfhZrXC4Gdlo2/YwZW7u7KJZY6/b3ieSCIWVq/E6p+wDCzeo3E6leRjDA=="
+  "resolved" "https://registry.npmjs.org/angular2-text-mask/-/angular2-text-mask-9.0.0.tgz"
+  "version" "9.0.0"
+  dependencies:
+    "text-mask-core" "^5.0.0"
 
 "ansi-colors@4.1.1":
   "integrity" "sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA=="
@@ -5938,6 +5950,11 @@
     "glob" "^7.1.4"
     "minimatch" "^3.0.4"
 
+"text-mask-core@^5.0.0":
+  "integrity" "sha1-gN1evgSCV1fkZhnmkUB6n4s8G28="
+  "resolved" "https://registry.npmjs.org/text-mask-core/-/text-mask-core-5.1.2.tgz"
+  "version" "5.1.2"
+
 "text-table@0.2.0":
   "integrity" "sha1-f17oI66AUgfACvLfSoTsP8+lcLQ="
   "resolved" "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
@@ -5952,6 +5969,11 @@
   "integrity" "sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA=="
   "resolved" "https://registry.npmjs.org/thunky/-/thunky-1.1.0.tgz"
   "version" "1.1.0"
+
+"tinycolor2@^1.4.2":
+  "integrity" "sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA=="
+  "resolved" "https://registry.npmjs.org/tinycolor2/-/tinycolor2-1.4.2.tgz"
+  "version" "1.4.2"
 
 "tmp@^0.0.33":
   "integrity" "sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw=="

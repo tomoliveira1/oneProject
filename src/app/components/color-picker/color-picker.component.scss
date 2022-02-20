@@ -1,0 +1,79 @@
+h1 {
+  margin: 5px 0 5px 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.color_options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.color {
+  width: 25px;
+  height: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s linear;
+  transform: scale(1);
+}
+.yellow {
+  background-color: #E6B904;
+} .yellow:hover {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}
+.green {
+  background-color: #65BA5A;
+} .green {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}
+.pink {
+  background-color: #EA86C2;
+} .pink {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}
+.salmon {
+  background-color: #FF6F68;
+} .salmon {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}
+.purple {
+  background-color: #B07FE0;
+}.purple {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}
+.blue {
+  background-color: #59C0E7;
+}.blue {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}
+.gray {
+  background-color: #989898;
+}.gray {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}
+.black {
+  background-color: #444444;
+}.black {
+  width: 27px;
+  height: 22px;
+  transform: scale(1);
+}

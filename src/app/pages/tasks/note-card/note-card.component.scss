@@ -1,0 +1,41 @@
+
+.title {
+  font-weight: 600;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 220px);
+  gap: 20px;
+
+
+  .data {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .description {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 150px;
+  }
+
+  .card-body {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+
+    box-shadow: 0 0 6px rgb(177, 177, 177);}
+  }
+
+.blend-mode {
+  color: #fff;
+
+  color:#fff;
+  mix-blend-mode: difference;
+}

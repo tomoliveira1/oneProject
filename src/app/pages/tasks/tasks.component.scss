@@ -1,0 +1,34 @@
+.content {
+  margin-left: 8%;
+}
+
+.button_container {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.button {
+  align-items: flex-start;
+  width: 120px;
+  padding: 9px;
+  margin-bottom: 1rem;
+  background-color: #24a0ed;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 4px 4px rgba(124, 168, 255, 0.625);
+  transition: all ease 0.2s;
+}
+
+.button:hover {
+  background-color: #007ecc;
+}
+
+.fas {
+  margin-right: 5px;
+}
+
+h1 {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,8 @@
+<div  class="content">
+  <div *ngFor="let task of tasks" class="card-body" [ngStyle]="{'background-color': task.cor}">
+    <p class="data" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.data + ' às ' + task.hora}}</p>
+    <h5 class="title" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.nome}}</h5>
+    <p class="description" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.descricao}}</p>
+  </div>
+</div>
+

@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
       return true
     }
 
-    this.router.navigate([''])
+    this.router.navigate(['/tasks/notes'])
 
     return false
   }

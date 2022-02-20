@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OneProjectComponent } from './one-project.component';
+import { ColorPickerComponent } from './color-picker.component';
 
-describe('OneProjectComponent', () => {
-  let component: OneProjectComponent;
-  let fixture: ComponentFixture<OneProjectComponent>;
+describe('ColorPickerComponent', () => {
+  let component: ColorPickerComponent;
+  let fixture: ComponentFixture<ColorPickerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OneProjectComponent ]
+      declarations: [ ColorPickerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OneProjectComponent);
+    fixture = TestBed.createComponent(ColorPickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

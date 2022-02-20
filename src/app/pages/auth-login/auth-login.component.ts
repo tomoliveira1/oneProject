@@ -1,3 +1,4 @@
+import  Swal  from 'sweetalert2';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -8,6 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./auth-login.component.scss']
 })
 export class AuthLoginComponent implements OnInit {
+  public isSignIn = false;
 
   constructor(
     public fb: FormBuilder,
@@ -23,7 +25,7 @@ export class AuthLoginComponent implements OnInit {
   })
 
   public async login() {
-    this.authService.login(this.loginForm.value);
+    await this.authService.login(this.loginForm.value);
   }
 
   public async signIn() {

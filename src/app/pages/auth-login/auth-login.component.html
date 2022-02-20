@@ -51,7 +51,9 @@
                   id="password"
                 />
               </div>
-              <div class="d-grid gap-2 mt-4">
+              <a class="link-info signIn" *ngIf="isSignIn" (click)="isSignIn = false">Volte para o Login</a>
+              <a class="link-info signIn" *ngIf="!isSignIn" (click)="isSignIn = true">Novo aqui? Cadastre-se</a>
+              <div class="d-grid gap-2 mt-4" *ngIf="!isSignIn">
                 <button
                   type="submit"
                   form="loginForm"
@@ -60,10 +62,7 @@
                   Entrar
                 </button>
               </div>
-              <div class="text-center p-2">
-                <p class="mb-0 text-muted">ou</p>
-              </div>
-              <div class="d-grid gap-2">
+              <div class="d-grid gap-2 mt-4" *ngIf="isSignIn">
                 <button
                   type="button"
                   form="loginForm"
