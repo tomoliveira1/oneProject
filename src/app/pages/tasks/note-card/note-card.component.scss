@@ -4,10 +4,9 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 220px);
-  gap: 20px;
+display: flex;
+width: 100%;
+flex-wrap: wrap;
 
 
   .data {
