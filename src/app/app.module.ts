@@ -27,6 +27,7 @@ import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dia
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { TextMaskModule } from 'angular2-text-mask';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [AppComponent, AuthLoginComponent, NoteCardComponent, SpinnerComponent, TasksComponent, NavbarComponent, SidebarComponent, MainComponent, AddModalComponent],
   imports: [
@@ -44,7 +45,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    TextMaskModule
+    TextMaskModule,
+    DragDropModule,
   ],
   exports: [
     MatDatepickerModule,

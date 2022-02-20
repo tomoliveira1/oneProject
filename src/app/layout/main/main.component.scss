@@ -1,7 +1,9 @@
 .content {
   display: flex;
 }
+
 .content .wrapper {
   padding: 20px;
   margin: 0 auto;
+  min-width: 900px
 }

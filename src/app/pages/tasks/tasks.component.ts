@@ -4,6 +4,8 @@ import { AddModalComponent } from 'src/app/components/add-modal/add-modal.compon
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { TasksService } from 'src/app/services/tasks.service';
 
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -47,4 +49,23 @@ export class TasksComponent implements OnInit {
         }
     })
   }
+
+
+  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+
+  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
+
 }
