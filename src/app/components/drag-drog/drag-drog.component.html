@@ -1,0 +1,40 @@
+
+
+  <div class="content">
+
+    <div class="content-card">
+      <h3>To do</h3>
+      <div class="dropzone " >
+        <!-- <div class="card"">
+          <div class="card-title">Study</div>
+          <div class="card-description">Learn drop and drag</div>
+        </div> -->
+        <div *ngFor="let task of tasks" class="card" draggable="true" [ngStyle]="{'background-color': task.cor}">
+          <p class="data" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.data + ' às ' + task.hora}}</p>
+          <h5 class="title" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.nome}}</h5>
+          <p class="description" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.descricao}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h3>In Progress</h3>
+      <div class="dropzone">
+        <div class="card" draggable="true">
+          <div class="card-title">To do</div>
+          <div class="card-description">Create drop and drag</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h3>Concluded</h3>
+      <div class="dropzone">
+        <div class="card" draggable="true">
+          <div class="card-title">Deploy</div>
+          <div class="card-description">Create deploy in Netlify</div>
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -28,8 +28,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { TextMaskModule } from 'angular2-text-mask';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDrogComponent } from './components/drag-drog/drag-drog.component';
 @NgModule({
-  declarations: [AppComponent, AuthLoginComponent, NoteCardComponent, SpinnerComponent, TasksComponent, NavbarComponent, SidebarComponent, MainComponent, AddModalComponent],
+  declarations: [AppComponent, AuthLoginComponent, NoteCardComponent, SpinnerComponent, TasksComponent, NavbarComponent, SidebarComponent, MainComponent, AddModalComponent, DragDrogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

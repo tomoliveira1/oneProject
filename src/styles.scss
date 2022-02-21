@@ -1,4 +1,26 @@
 @import './app/shared/styles/material-dialog.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&family=Rubik:wght@300;400;500;700&display=swap');
+
+:root {
+  --background:	#282a36;
+  --currentLine:	#44475a;
+  --foreground:	#f8f8f246;
+  --comment:	#6272a4;
+  --yan:	#8be9fd;
+  --green:	#50fa7b;
+  --orange:	#ffb86c;
+  --pink:	#ff79c6;
+  --purple:	#bd93f9;
+  --red:	#ff5555;
+  --yellow:	#f1fa8c;
+
+  --card-background: #1B1E26;
+  --card-foreground: #1B1E26;
+  --card-realce-green: #7fc98a;
+  --card-realce-dark-green: #425946;
+  --card-text-gray: #F2F2F2;
+}
+
 
 * {
   box-sizing: border-box;
