@@ -1,6 +1,6 @@
 import { Observable, BehaviorSubject } from 'rxjs';
 import { IFinishModel } from './../../../models/finish.model';
-import { Component, EventEmitter, OnInit, Output, ChangeDetectorRef  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ChangeDetectorRef, Input  } from '@angular/core';
 import { tasksModel } from 'src/app/models/tasks.model';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { TasksService } from 'src/app/services/tasks.service';
@@ -15,7 +15,7 @@ import * as tinycolor from 'tinycolor2';
 export class NoteCardComponent implements OnInit {
   public token = localStorage.getItem("token");
   public noData = false;
-  public tasks: any;
+  @Input() public tasks: any;
   public isFinished: boolean = false;
   public array$ = new BehaviorSubject([]);
 
@@ -57,9 +57,8 @@ export class NoteCardComponent implements OnInit {
     }).then((res) => {
       if(res.value) {
         this.service.delete(this.token, id).subscribe((res) => {
-          window.location.reload();
           this.spinner.requestEnded();
-
+          this.getTasksfunc();
           Swal.fire({
             toast: true,
             position: 'top-end',
@@ -90,7 +89,7 @@ export class NoteCardComponent implements OnInit {
           timer: 2000,
           timerProgressBar: false,
         });
-        window.location.reload();
+        this.getTasksfunc();
         this.spinner.requestEnded()
       }
     })

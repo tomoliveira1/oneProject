@@ -31,7 +31,9 @@ export class TasksComponent implements OnInit {
     const dialogRef = this.matDialog.open(AddModalComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-        window.location.reload();
+      setTimeout(() => {
+        this.getTasks()
+      }, 1000)
     })
   }
 
@@ -43,7 +45,6 @@ export class TasksComponent implements OnInit {
       this.service.getTasks(this.token).subscribe((res) => {
         if(res) {
           this.tasks = res;
-
           this.spinner.requestEnded();
         }
     })

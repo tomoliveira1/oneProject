@@ -1,6 +1,6 @@
 import { SpinnerService } from './../../services/spinner.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ColorPickerComponent } from '../color-picker/color-picker.component';
 import { TasksService } from 'src/app/services/tasks.service';
@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   templateUrl: './add-modal.component.html',
   styleUrls: ['./add-modal.component.scss']
 })
-export class AddModalComponent implements OnInit {
+export class AddModalComponent implements OnInit, AfterViewInit {
 
   constructor(
   private service: TasksService,
@@ -26,10 +26,13 @@ export class AddModalComponent implements OnInit {
     descricao: [''],
     data: [''],
     hora: [''],
-    cor: ['']
+    cor: ['#0000000']
   })
 
   ngOnInit(): void {
+  }
+  ngAfterViewInit(): void {
+    this.form.controls["cor"].setValue('#000000')
   }
 
   onBack(): void {
