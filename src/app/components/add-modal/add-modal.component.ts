@@ -22,10 +22,10 @@ export class AddModalComponent implements OnInit, AfterViewInit {
   ) { }
 
   public form = this.fb.group({
-    nome: [''],
-    descricao: [''],
-    data: [''],
-    hora: [''],
+    nome: ['', Validators.required],
+    descricao: ['', Validators.required],
+    data: ['', Validators.required],
+    hora: ['', Validators.required],
     cor: ['#0000000']
   })
 
@@ -60,22 +60,34 @@ export class AddModalComponent implements OnInit, AfterViewInit {
   }
 
   public salvar() {
-    this.service.save(localStorage.getItem("token"), this.form.value).subscribe((data: any) => {
-      if(data.message === "Tarefa Cadastrada com Sucesso") {
-        Swal.fire({
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: false,
-          icon: 'success',
-          text: data.message,
-        });
-        this.dialogRef.close();
-      }
-    })
-
-    this.spinner.requestEnded();
+    if(this.form.valid) {
+      this.service.save(localStorage.getItem("token"), this.form.value).subscribe((data: any) => {
+        if(data.message === "Tarefa Cadastrada com Sucesso") {
+          Swal.fire({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: false,
+            icon: 'success',
+            text: data.message,
+          });
+          this.dialogRef.close();
+        }
+      })
+  
+      this.spinner.requestEnded();
+    } else {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: false,
+        icon: 'warning',
+        text: "Preencha todos os campos!"
+      });
+    }
   }
 
   public mask = {
