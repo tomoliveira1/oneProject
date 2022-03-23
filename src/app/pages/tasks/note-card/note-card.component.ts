@@ -43,7 +43,7 @@ export class NoteCardComponent implements OnInit {
   }
 
   public convertDigitIn(str: any){
-    return str.split('/').reverse().join('/');
+    return str.split('-').reverse().join('/');
  }
 
   public delete(id: number) {
