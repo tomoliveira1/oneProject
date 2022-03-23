@@ -1,13 +1,15 @@
-
 .title {
   font-weight: 600;
 }
 
-.content {
-display: flex;
-width: 100%;
-flex-wrap: wrap;
+.checked {
+  text-decoration: line-through;
+}
 
+.content {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 
   .data {
     font-size: 14px;
@@ -23,18 +25,84 @@ flex-wrap: wrap;
   }
 
   .card-body {
+    position: relative;
     width: 200px;
     height: 200px;
+    max-width: 200px;
     margin-right: 20px;
     border-radius: 15px;
     margin-bottom: 1rem;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 0px 5px rgba(black, 0.072);
 
-    box-shadow: 0 0 6px rgb(177, 177, 177);}
+      .check_button {
+        opacity: 1;
+        transition-delay: 0.18s;
+      }
+
+      .trash_button {
+        opacity: 1;
+        transition-delay: 0.18s;
+      }
+    }
+
+    box-shadow: 0 0 10px rgb(165, 165, 165);
   }
+}
 
 .blend-mode {
   color: #fff;
 
-  color:#fff;
+  color: #fff;
   mix-blend-mode: difference;
+}
+
+.check_button {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  height: 25px;
+  width: 25px;
+
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .fa-check {
+    color: #00ff00;
+  }
+
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+
+  &:hover {
+    background-color: #c6ffc6;
+  }
+}
+
+.trash_button {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  height: 25px;
+  width: 25px;
+
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .fa-trash {
+    color: #ff0000;
+    margin: 2px;
+  }
+
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+
+  &:hover {
+    background-color: #ffd2d2;
+  }
 }

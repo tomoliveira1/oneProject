@@ -31,6 +31,7 @@ export class TasksComponent implements OnInit {
     const dialogRef = this.matDialog.open(AddModalComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
+        window.location.reload();
     })
   }
 

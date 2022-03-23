@@ -1,8 +1,10 @@
 <div  class="content">
   <div *ngFor="let task of tasks" class="card-body" [ngStyle]="{'background-color': task.cor}">
-    <p class="data" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.data + ' às ' + task.hora}}</p>
-    <h5 class="title" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.nome}}</h5>
-    <p class="description" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.descricao}}</p>
+    <p class="data" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{convertDigitIn(task.data) + ' às ' + task.hora}}</p>
+    <h5 class="title" [ngClass]="task.concluida === true ? 'checked' : 'nada' " [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.nome}}</h5>
+    <p class="description" [ngClass]="task.concluida === true ? 'checked' : 'nada'" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.descricao}}</p>
+    <div class="check_button" (click)="finishTask(task.id)"><i class="fas fa-check"></i></div>
+    <div class="trash_button" (click)="delete(task.id)"><i class="fas fa-trash"></i></div>
   </div>
 </div>
 

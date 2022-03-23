@@ -1,5 +1,5 @@
 export class AppContstants {
-  public static get serverBase(): string { return "https://oneproject.azurewebsites.net/" }
+  public static get serverBase(): string { return "https://one-project.azurewebsites.net/" }
 
   public static get loginBase(): string { return this.serverBase + "login"}
 
@@ -10,4 +10,6 @@ export class AppContstants {
   public static get save(): string { return this.serverBase + "salvar" }
 
   public static get search(): string { return this.serverBase + "pesquisar" }
+
+  public static get delete(): string { return this.serverBase + "excluir"}
 }

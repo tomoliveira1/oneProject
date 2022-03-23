@@ -1,6 +1,6 @@
-.center_div{
+.center_div {
   margin: 0 auto;
-  width:10%
+  width: 10%;
 }
 
 #login-sc {
@@ -17,6 +17,15 @@
   position: fixed;
   width: 100%;
   z-index: 1;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.register {
+  width: 150px;
 }
 
 .signIn {

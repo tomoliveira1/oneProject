@@ -25,10 +25,16 @@ export class AuthServiceService {
 
   async login(usuario = {}) {
     return this.http.post(AppContstants.loginBase, usuario).subscribe(data => {
-      var token = JSON.parse(JSON.stringify(data)).token
-      localStorage.setItem("token", token);
-      this.spinner.requestEnded();
       this.router.navigate(['/tasks/notes'])
+      try {
+        var token = JSON.parse(JSON.stringify(data)).token
+        localStorage.setItem("token", token);
+        this.spinner.requestEnded();
+        return true
+      } catch(e) {
+        this.spinner.requestEnded();
+        return false
+      }
     })
   }
 
@@ -37,8 +43,7 @@ export class AuthServiceService {
       var token = JSON.parse(JSON.stringify(data)).token
       localStorage.setItem("token", token);
       this.spinner.requestEnded();
-      this.router.navigate(['/tasks/notes'])
+      this.router.navigate(['/login'])
     });
   }
-
 }

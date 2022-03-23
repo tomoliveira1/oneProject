@@ -14,13 +14,12 @@
             </div>
             <hr class="my-4" />
             <div class="text-center mb-2">
-              <p>Faça o Login para continuar.</p>
+              <p>Bem-vinde! Registre-se para continuar.</p>
             </div>
             <form
-              [formGroup]="loginForm"
+              [formGroup]="registerForm"
               #f="ngForm"
-              (ngSubmit)="login()"
-              id="loginForm"
+              id="registerForm"
             >
               <div class="mb-3">
                 <label for="user" class="form-label">Usuário*</label>
@@ -32,7 +31,7 @@
                   id="user"
                 />
               </div>
-              <div class="mb-1">
+              <div class="mb-3">
                 <label for="password" class="form-label">Senha*</label>
                 <input
                   required
@@ -41,20 +40,34 @@
                   class="form-control"
                   id="password"
                 />
-                <span class="invalid-password" *ngIf="isInvalid === true">Usuário ou senha não foram preenchidos.</span>
               </div>
-              <div class="d-grid gap-2 mt-4">
+
+              <div class="mb-1">
+                <label for="passwordConfirm" class="form-label">Confirmar Senha*</label>
+                <input
+                  required
+                  formControlName="confirmSenha"
+                  type="password"
+                  class="form-control"
+                  id="passwordConfirm"
+                />
+
+                <span class="invalid-password" *ngIf="samePass === true">Senhas não conferem.</span>
+              </div>
+
+              <div class="d-grid gap-2 mt-4 button">
                 <button
-                  type="submit"
+                  type="button"
                   form="loginForm"
-                  class="btn btn-primary btn-block rounded-pill"
+                  class="btn btn-primary btn-block rounded-pill register"
+                  (click)="signIn()"
                 >
-                  Entrar
+                  Registrar
                 </button>
               </div>
 
               <div class="link">
-                <p>Ou <a class="link-danger signIn" (click)="redirect()">Registre-se!</a></p>
+                <p>Já é um usuário? <a class="link-danger signIn" (click)="redirect()">Faça o login!</a></p>
               </div>
             </form>
           </div>

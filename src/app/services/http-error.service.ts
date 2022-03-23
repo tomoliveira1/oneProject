@@ -11,14 +11,16 @@ export class HttpErrorService {
    }
 
    showError(errors: any) {
-    Swal.fire({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: false,
-      icon: 'error',
-      text: errors.error.message,
-    });
+     if(errors) {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: false,
+        icon: 'error',
+        text: errors.error.message,
+      });
+     }
    }
 }

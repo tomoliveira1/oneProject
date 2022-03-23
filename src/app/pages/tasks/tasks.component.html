@@ -1,11 +1,11 @@
 <!-- Illustration by <a href="https://icons8.com/illustrations/author/61e671c88ad05600090f8896">Anzhelika Bashirova</a> from <a href="https://icons8.com/illustrations">Ouch!</a> -->
+<button class="button" (click)="addModal()"><i class="fas fa-plus"></i>Adicionar</button>
 
+<h1>Tarefas</h1>
 <div class="content">
-  <button class="button" (click)="addModal()"><i class="fas fa-plus"></i>Adicionar</button>
 
-  <h1>Tarefas</h1>
   <div class="d-flex justify-content-center" *ngIf="noData">
-    <img src="../../../assets/no-data.png" alt="nenhum registro encontrado" width="350px" class="">
+    <img src="../../../assets/no-data.svg" alt="nenhum registro encontrado" width="360px">
   </div>
   <div class="d-flex" *ngIf="!noData">
     <app-note-card (noDataFunction)="noDataFunc($event)"></app-note-card>

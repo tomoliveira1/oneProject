@@ -18,7 +18,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
       .pipe(
         catchError( err => {
           let errMsg = '';
-          console.log(err);
 
           this.httpError.showError(err)
           this.spinner.requestEnded()
