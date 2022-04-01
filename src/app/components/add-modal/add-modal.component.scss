@@ -4,6 +4,21 @@
   flex-direction: column;
 }
 
+.paint {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.input-color {
+  opacity: 0;
+  position: absolute;
+  left: 9px;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
 .button {
   width: 30px;
   height: 30px;
@@ -65,7 +80,7 @@
     color: white;
     padding: 4px 20px;
     border: none;
-    background-color: #408BFA;
+    background-color: #408bfa;
     transition: all ease 0.2s;
     border-radius: 50px;
   }
@@ -78,7 +93,7 @@
     opacity: 1;
   }
 
-  input[type=radio] {
+  input[type="radio"] {
     border: 0px;
     width: 100%;
     height: 20px;

@@ -1,7 +1,7 @@
 import { SpinnerService } from './../../services/spinner.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ColorPickerComponent } from '../color-picker/color-picker.component';
 import { TasksService } from 'src/app/services/tasks.service';
 import Swal from 'sweetalert2';
@@ -12,27 +12,44 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-modal.component.scss']
 })
 export class AddModalComponent implements OnInit, AfterViewInit {
+  public title: string;
 
+  public form = this.fb.group({
+    id: [null],
+    usuario: [''],
+    nome: ['', Validators.required],
+    descricao: ['', Validators.required],
+    data: ['', Validators.required],
+    hora: ['', Validators.required],
+    cor: ['#FBE364']
+  })
+
+  @ViewChild('paint') button: ElementRef<HTMLButtonElement>;
   constructor(
   private service: TasksService,
   public fb: FormBuilder,
   public matDialog: MatDialog,
   public spinner: SpinnerService,
-  public dialogRef: MatDialogRef<AddModalComponent>
-  ) { }
-
-  public form = this.fb.group({
-    nome: ['', Validators.required],
-    descricao: ['', Validators.required],
-    data: ['', Validators.required],
-    hora: ['', Validators.required],
-    cor: ['#0000000']
-  })
+  public dialogRef: MatDialogRef<AddModalComponent>,
+  public renderer: Renderer2,
+  @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    if(data) {
+      this.title = data?.title;
+      this.form.controls['usuario'].setValue(data?.data?.usuario)
+      this.form.controls['id'].setValue(data?.data?.id)
+      this.form.controls['nome'].setValue(data?.data?.nome);
+      this.form.controls['descricao'].setValue(data?.data?.descricao);
+      this.form.controls['data'].setValue(data?.data?.data);
+      this.form.controls['hora'].setValue(data?.data?.hora);
+      this.form.controls['cor'].setValue(data?.data?.cor);
+    }
+   }
 
   ngOnInit(): void {
   }
   ngAfterViewInit(): void {
-    this.form.controls["cor"].setValue('#000000')
+   this.form.controls['cor'].value !== '#FBE364' ? this.renderer.setStyle(this.button.nativeElement, 'background', this.form.get('cor')?.value) : this.renderer.setStyle(this.button.nativeElement, 'background', '#FBE364')
   }
 
   onBack(): void {
@@ -40,23 +57,8 @@ export class AddModalComponent implements OnInit, AfterViewInit {
   }
 
   setColor(e: any) {
-    this.form.controls["cor"].setValue(e?.target?.value)
-  }
-
-  colorPicker():void {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.id = 'color-picker';
-    dialogConfig.width = '250px';
-    dialogConfig.height = '10%';
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.backdropClass = 'scape';
-    dialogConfig.disableClose = false;
-    dialogConfig.data = {};
-
-    const dialogRef = this.matDialog.open(ColorPickerComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-    })
+    this.form.controls["cor"].setValue(e?.target?.value);
+    this.renderer.setStyle(this.button.nativeElement, 'background', e?.target?.value)
   }
 
   public salvar() {
@@ -64,18 +66,16 @@ export class AddModalComponent implements OnInit, AfterViewInit {
       this.service.save(localStorage.getItem("token"), this.form.value).subscribe((data: any) => {
         if(data.message === "Tarefa Cadastrada com Sucesso") {
           Swal.fire({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: false,
+            position: 'center',
             icon: 'success',
-            text: data.message,
-          });
+            title: data.message,
+            showConfirmButton: false,
+            timer: 1200
+          })
           this.dialogRef.close();
         }
       })
-  
+
       this.spinner.requestEnded();
     } else {
       Swal.fire({

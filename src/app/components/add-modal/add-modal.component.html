@@ -8,10 +8,16 @@
   </div>
 
   <div class="container_modal">
-    <h1>Nova Tarefa</h1>
-    <h5>Enfrente seus objetivos em doses diárias</h5>
+    <h1>{{title}}</h1>
+    <h5>Adicione ou edite uma Tarefa.</h5>
     <form [formGroup]="form" #f="ngForm" id="modalAdicionarTarefa" (ngSubmit)="salvar()">
       <div class="row">
+        <div class="paint">
+          <button type="button" class="btn" #paint><i class="material-icons"><i class="fas fa-fill-drip"></i></i></button>
+          <input type="color" class="input-color" value="#ff0000" formControlName="cor" (change)="setColor($event)"/>
+          <label for="nome" class="label" style="margin-left: 5px;">Cor</label>
+        </div>
+
         <div class="form-group mb-3">
           <label for="nome" class="label">Nome</label>
           <input
@@ -44,11 +50,6 @@
           <label for="hora" class="label">Hora</label>
               <input type="time" class="form-control custom" pattern="([01][0-9]|2[0-3]):[0-5][0-9]" id="hora" formControlName="hora"/>
         </div>
-      </div>
-
-      <div class="color-container mt-3 mb-0">
-        <label for="hora" class="label">Selecione uma cor</label>
-        <input type="color" class="color-wheel" formControlName="cor" id="cor" (change)="setColor($event)">
       </div>
     </form>
 

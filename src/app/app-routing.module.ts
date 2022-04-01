@@ -15,7 +15,8 @@ const routes: Routes = [
     path: 'tasks',
     component: MainComponent,
     children: [
-      { path: 'notes', component: TasksComponent}
+      { path: 'notes', component: TasksComponent},
+      { path: 'completes', component: TasksComponent}
     ],
   },
 ];

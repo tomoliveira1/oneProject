@@ -33,6 +33,14 @@ export class TasksService {
     return this.http.get<tasksModel[]>(AppContstants.getTasks, httpOptions);
   }
 
+  public getTasksId(token: any, id: number) {
+    var headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+    const httpOptions = {
+      headers: headers_object
+    };
+    return this.http.get<any>(AppContstants.getTasks + `/${id}`, httpOptions);
+  }
+
   public search(token: any) {
     var headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
     const httpOptions = {

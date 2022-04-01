@@ -1,3 +1,4 @@
+
 import { Observable, BehaviorSubject } from 'rxjs';
 import { IFinishModel } from './../../../models/finish.model';
 import { Component, EventEmitter, OnInit, Output, ChangeDetectorRef, Input  } from '@angular/core';
@@ -6,6 +7,8 @@ import { SpinnerService } from 'src/app/services/spinner.service';
 import { TasksService } from 'src/app/services/tasks.service';
 import Swal from 'sweetalert2';
 import * as tinycolor from 'tinycolor2';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { AddModalComponent } from 'src/app/components/add-modal/add-modal.component';
 
 @Component({
   selector: 'app-note-card',
@@ -19,7 +22,7 @@ export class NoteCardComponent implements OnInit {
   public isFinished: boolean = false;
   public array$ = new BehaviorSubject([]);
 
-  constructor( private service: TasksService, public spinner: SpinnerService, private changeDetection: ChangeDetectorRef ) {}
+  constructor( private service: TasksService, public spinner: SpinnerService, private changeDetection: ChangeDetectorRef, private matDialog: MatDialog ) {}
 
   @Output() noDataFunction:EventEmitter<boolean> = new EventEmitter();
 
@@ -46,6 +49,38 @@ export class NoteCardComponent implements OnInit {
     return str.split('-').reverse().join('/');
  }
 
+  public editTask(id: number) {
+    this.service.getTasksId(this.token, id).subscribe((res) => {
+      if(res.id) {
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.id = 'add-modal-component';
+          dialogConfig.width = '500px';
+          dialogConfig.hasBackdrop = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.data = {};
+          const config: any = {
+            data: res,
+            title: "Editar Tarefa"
+          }
+          dialogConfig.data = config
+          const dialogRef = this.matDialog.open(AddModalComponent, dialogConfig);
+
+          dialogRef.afterClosed().subscribe(result => {
+            if(result) {
+              setTimeout(() => {
+                this.getTasksfunc();
+              }, 1000)
+            }
+            setTimeout(() => {
+              this.getTasksfunc();
+            }, 1000)
+          })
+          this.spinner.requestEnded()
+      }
+      this.spinner.requestEnded()
+    })
+  }
+
   public delete(id: number) {
     Swal.fire({
       title: 'Deletar Tarefa',
@@ -60,14 +95,12 @@ export class NoteCardComponent implements OnInit {
           this.spinner.requestEnded();
           this.getTasksfunc();
           Swal.fire({
-            toast: true,
-            position: 'top-end',
+            position: 'center',
             icon: 'success',
-            text: 'Tarefa Excluida com sucesso!',
+            title: 'Tarefa Excluida com sucesso!',
             showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: false,
-          });
+            timer: 1200
+          })
         });
       }
     })
@@ -81,14 +114,12 @@ export class NoteCardComponent implements OnInit {
     this.service.finishTask(this.token, id, model).subscribe((res) => {
       if(res) {
         Swal.fire({
-          toast: true,
-          position: 'top-end',
+          position: 'center',
           icon: 'success',
-          text: 'Eba, você concluiu uma tarefa!',
+          title: 'Eba, você concluiu uma tarefa!',
           showConfirmButton: false,
-          timer: 2000,
-          timerProgressBar: false,
-        });
+          timer: 1200
+        })
         this.getTasksfunc();
         this.spinner.requestEnded()
       }

@@ -1,10 +1,13 @@
 <div  class="content">
   <div *ngFor="let task of tasks" class="card-body" [ngStyle]="{'background-color': task.cor}">
-    <p class="data" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{convertDigitIn(task.data) + ' às ' + task.hora}}</p>
+    <div class="w-100 select-edit" (click)="editTask(task.id)">
+    <p class="data" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }"><i class="fas fa-calendar custom"></i>{{convertDigitIn(task.data)}}</p>
+    <p class="data" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }"><i class="fas fa-clock custom"></i>{{task.hora}}</p>
     <h5 class="title" [ngClass]="task.concluida === true ? 'checked' : 'nada' " [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.nome}}</h5>
     <p class="description" [ngClass]="task.concluida === true ? 'checked' : 'nada'" [ngStyle]="{'color': getBright(task.cor) ? 'black' : 'white' }">{{task.descricao}}</p>
-    <div class="check_button" (click)="finishTask(task.id)" [hidden]="task.concluida === true"><i class="fas fa-check"></i></div>
+    </div>
     <div class="trash_button" (click)="delete(task.id)"><i class="fas fa-trash"></i></div>
+    <div class="check_button" (click)="finishTask(task.id)" [hidden]="task.concluida === true"><i class="fas fa-check"></i></div>
   </div>
 </div>
 

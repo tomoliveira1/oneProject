@@ -27,10 +27,19 @@ export class TasksComponent implements OnInit {
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = true;
     dialogConfig.data = {};
+    const config: any = {
+      title: "Nova Tarefa"
+    }
+    dialogConfig.data = config
 
     const dialogRef = this.matDialog.open(AddModalComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        setTimeout(() => {
+          this.getTasks()
+        }, 1000)
+      }
       setTimeout(() => {
         this.getTasks()
       }, 1000)

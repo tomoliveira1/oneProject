@@ -1,5 +1,4 @@
 
-
 <div class="l-navbar" id="nav-bar">
   <nav class="nav">
     <div>
@@ -8,8 +7,12 @@
       </a>
     </div>
 
-    <a href="/tasks/notes" class="nav_icon nav_change">
-      <i class="fas fa-tasks"></i>
+    <a href="/tasks/notes" class="nav_icon nav_change tt" [routerLink]="['/tasks/notes']"  data-bs-toggle="tooltip" data-bs-placement="right" title="Tela Inicial" [routerLinkActive]="['active']">
+      <i class="fas fa-home"></i>
+    </a>
+
+    <a href="/tasks/notes" class="nav_icon nav_change tt" [routerLink]="['/tasks/completes']" data-bs-toggle="tooltip" data-bs-placement="right" title="Tarefas Concluidas" [routerLinkActive]="['active']">
+      <i class="fas fa-check-double"></i>
     </a>
   </nav>
 </div>
