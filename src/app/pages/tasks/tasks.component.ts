@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddModalComponent } from 'src/app/components/add-modal/add-modal.component';
 import { SpinnerService } from 'src/app/services/spinner.service';
@@ -9,7 +9,7 @@ import { TasksService } from 'src/app/services/tasks.service';
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss']
 })
-export class TasksComponent implements OnInit {
+export class TasksComponent implements OnInit, OnChanges {
 
   constructor(public matDialog: MatDialog, private service: TasksService, public spinner: SpinnerService) { }
   public noData = false;
@@ -18,6 +18,12 @@ export class TasksComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTasks();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.tasks) {
+      this.noData = true;
+    }
   }
 
   addModal():void {
@@ -54,6 +60,7 @@ export class TasksComponent implements OnInit {
       this.service.getTasks(this.token).subscribe((res) => {
         if(res) {
           this.tasks = res;
+          this.noData = false;
           this.spinner.requestEnded();
         }
     })

@@ -58,6 +58,9 @@ export class AddModalComponent implements OnInit, AfterViewInit {
 
   setColor(e: any) {
     this.form.controls["cor"].setValue(e?.target?.value);
+    if(!e) {
+      this.form.controls["cor"].setValue('#FBE364');
+    }
     this.renderer.setStyle(this.button.nativeElement, 'background', e?.target?.value)
   }
 

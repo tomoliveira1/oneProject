@@ -121,3 +121,13 @@
     background-color: #ffd2d2;
   }
 }
+
+@media (max-width: 760px) {
+  .trash_button {
+    opacity: 100%;
+  }
+
+  .check_button {
+    opacity: 100%;
+  }
+}
