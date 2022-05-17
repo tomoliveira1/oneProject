@@ -33,7 +33,9 @@ export class AuthLoginComponent implements OnInit {
       this.isInvalid = true;
       return
     }
-    await this.authService.login(this.loginForm.value);
+    await this.authService.login(this.loginForm.value).then((res) => {
+      console.log(res)
+    });
   }
 
   redirect() {

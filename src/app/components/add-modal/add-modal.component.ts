@@ -67,7 +67,7 @@ export class AddModalComponent implements OnInit, AfterViewInit {
   public salvar() {
     if(this.form.valid) {
       this.service.save(localStorage.getItem("token"), this.form.value).subscribe((data: any) => {
-        if(data.message === "Tarefa Cadastrada com Sucesso") {
+        if(data.message === `${localStorage.getItem("user")} Tarefa Cadastrada com Sucesso`) {
           Swal.fire({
             position: 'center',
             icon: 'success',

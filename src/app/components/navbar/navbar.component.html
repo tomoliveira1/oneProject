@@ -1,3 +1,8 @@
-<nav class="navbar navbar-expand-lg d-flex navbar-light bg-light justify-content-start mb-2">
-  <h1>Bem Vindo</h1>
+<nav class="navbar navbar-expand-lg d-flex navbar-light bg-light justify-content-end mb-2">
+  <span class="d-flex" type="button">
+    {{user}}
+    <mat-select>
+      <mat-option (click)="logout()">Sair</mat-option>
+    </mat-select>
+  </span>
 </nav>

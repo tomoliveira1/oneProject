@@ -28,6 +28,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { TextMaskModule } from 'angular2-text-mask';
 import { AuthRegisterComponent } from './pages/auth-register/auth-register.component';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [AppComponent, AuthLoginComponent, NoteCardComponent, SpinnerComponent, TasksComponent, NavbarComponent, SidebarComponent, MainComponent, AddModalComponent, AuthRegisterComponent],
   imports: [
@@ -45,7 +46,8 @@ import { AuthRegisterComponent } from './pages/auth-register/auth-register.compo
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    TextMaskModule
+    TextMaskModule,
+    MatSelectModule
   ],
   exports: [
     MatDatepickerModule,

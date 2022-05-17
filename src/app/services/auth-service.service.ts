@@ -27,8 +27,10 @@ export class AuthServiceService {
     return this.http.post(AppContstants.loginBase, usuario).subscribe(data => {
       this.router.navigate(['/tasks/notes'])
       try {
+        var user = JSON.parse(JSON.stringify(data)).user.nome
         var token = JSON.parse(JSON.stringify(data)).token
         localStorage.setItem("token", token);
+        localStorage.setItem("user", user);
         this.spinner.requestEnded();
         return true
       } catch(e) {
