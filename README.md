@@ -3,6 +3,9 @@
 ## Sobre o Projeto
 O One Project é um site desenvolvido para organizar de maneira simples e eficiente suas tarefas do dia a dia.
 
+## Acesso
+https://oneproject.facode.com.br/
+
 ## Tecnologias envolvidas
 - Angular 13
 - Bootstrap 5.1
