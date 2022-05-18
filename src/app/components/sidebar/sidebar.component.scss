@@ -40,14 +40,14 @@ header {
   flex-direction: column;
   align-items: center;
   width: 80px;
-  height: 100vh;
+  height: 100%;
   background-color: #ffffff;
   border-right: 1px solid #d0d0d0;
   transition: 0.5s;
 }
 
 .nav {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;

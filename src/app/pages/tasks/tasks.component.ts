@@ -30,6 +30,8 @@ export class TasksComponent implements OnInit, OnChanges {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.id = 'add-modal-component';
     dialogConfig.width = '500px';
+    dialogConfig.maxWidth = '100vw';
+    dialogConfig.maxHeight = '100vh';
     dialogConfig.hasBackdrop = true;
     dialogConfig.disableClose = true;
     dialogConfig.data = {};

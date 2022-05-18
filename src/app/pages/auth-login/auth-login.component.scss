@@ -1,6 +1,6 @@
-.center_div{
+.center_div {
   margin: 0 auto;
-  width:10%
+  width: 10%;
 }
 
 #login-sc {
@@ -33,4 +33,19 @@
 .invalid-password {
   font-size: 14px;
   color: rgb(211, 66, 66);
+}
+
+.help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(219, 219, 219);
+  width: 30px;
+  height: 30px;
+  margin: 10px 10px 0px;
+  border-radius: 100%;
+}
+
+.help:hover {
+  background-color: rgb(188, 188, 188);
 }

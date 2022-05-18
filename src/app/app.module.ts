@@ -29,8 +29,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { TextMaskModule } from 'angular2-text-mask';
 import { AuthRegisterComponent } from './pages/auth-register/auth-register.component';
 import {MatSelectModule} from '@angular/material/select';
+import { HelpModalComponent } from './pages/auth-login/help-modal/help-modal.component';
 @NgModule({
-  declarations: [AppComponent, AuthLoginComponent, NoteCardComponent, SpinnerComponent, TasksComponent, NavbarComponent, SidebarComponent, MainComponent, AddModalComponent, AuthRegisterComponent],
+  declarations: [AppComponent, AuthLoginComponent, NoteCardComponent, SpinnerComponent, TasksComponent, NavbarComponent, SidebarComponent, MainComponent, AddModalComponent, AuthRegisterComponent, HelpModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

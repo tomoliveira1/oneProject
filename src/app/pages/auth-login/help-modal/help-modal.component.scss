@@ -1,0 +1,60 @@
+.custom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 46px;
+}
+
+.title {
+  font-size: 26px;
+}
+
+.link {
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+}
+
+.developers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.text_devs {
+  margin: 0;
+  text-align: center;
+}
+
+.content_modal {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px 8px 0px 0px;
+}
+
+.button_close {
+  left: 50%;
+  border: none;
+  font-size: 25px;
+  color: #cacaca;
+  background-color: transparent;
+}
+
+.version {
+  color: rgb(152, 152, 152);
+  margin-top: 6px;
+  font-size: 12px;
+}
