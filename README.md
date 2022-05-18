@@ -1,27 +1,38 @@
-# OneProject
+# One Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+## Sobre o Projeto
+O One Project é um site desenvolvido para organizar de maneira simples e eficiente suas tarefas do dia a dia.
 
-## Development server
+## Tecnologias envolvidas
+- Angular 13
+- Bootstrap 5.1
+- HTML - CSS - TypeScript
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Ferramentas e API
+API: à colocar <br/>
+Mensagens de alerta: https://material-ui.com/pt/components/material-icons/<br/>
 
-## Code scaffolding
+## Como Executar
+### Pré Requisitos: npm
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+  # clonar repositório
+  $ git clone https://github.com/tomoliveira1/netflix
+  
+  # Instalar dependências
+  npm install
+  
+  # Executar o Projeto
+  npm start
+```
 
-## Build
+## Tela Web
+![image](https://user-images.githubusercontent.com/85240595/169094593-4b361a86-ffab-44e1-bdbe-00c1393065db.png)
+![image](https://user-images.githubusercontent.com/85240595/169096445-7edbb122-23e1-4ae7-aa3b-720904f9e754.png)
+![image](https://user-images.githubusercontent.com/85240595/169095144-51cd9f30-765b-4f2b-be2a-b51cef00847c.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Tela Mobile
+![image](https://user-images.githubusercontent.com/85240595/169097680-ae247d13-4ddd-4175-90fe-3046489199c5.png)
+![image](https://user-images.githubusercontent.com/85240595/169097789-935f671d-78b1-4f3f-b9ea-65521a0af8d9.png)
+![image](https://user-images.githubusercontent.com/85240595/169097839-2a455fa1-e8f1-439f-8b0c-9070e18e5d37.png)
