@@ -24,7 +24,20 @@
   margin-right: 5px;
 }
 
+.img {
+  width: 360px;
+}
+
 h1 {
   font-weight: bold;
   margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .img_div {
+    align-items: center;
+  }
+  .img {
+    width: 200px;
+  }
 }
